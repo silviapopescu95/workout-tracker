@@ -2,7 +2,7 @@
 var express = require("express");
 var mongoose = require("mongoose");
 var logger = require("morgan");
-var bodyParser = require("body-parser");
+// var bodyParser = require("body-parser");
 
 // create port
 var PORT = 3500;
@@ -39,6 +39,6 @@ app.use(require("./routes/htmlRoutes"));
 
 // start server
 app.listen(PORT, function() {
-    console.log("Listening on: localhost:" + PORT);
+    console.log("Listening on: http://localhost:" + PORT);
 })
 

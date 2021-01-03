@@ -53,3 +53,6 @@ router.put("/api/workouts/:id", function({ body, params }, res) {
           res.json(err);
       });
 });
+
+// exports router
+module.exports = router;
