@@ -2,7 +2,7 @@
 var express = require("express");
 var mongoose = require("mongoose");
 var logger = require("morgan");
-// var bodyParser = require("body-parser");
+var bodyParser = require("body-parser");
 
 // create port
 var PORT = 3500;
@@ -17,7 +17,7 @@ app.use(express.static("public"));
 app.use(logger("dev"));
 
 //connect to mongoose
-mongoose.connect("mongodb://localhost/workout-tracker", {
+mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,
   useFindAndModify: false
 });

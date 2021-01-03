@@ -4,6 +4,7 @@ var router = require("express").Router();
 // import path module
 var path = require("path");
 
+// Routes
 router.get("/exercise", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/assets/html/exercise.html"));
   });
