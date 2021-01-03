@@ -10,6 +10,8 @@ var PORT = 3500;
 // instance of express app
 var app = express();
 
+var dbConnection = "mongodb+srv://mixmastersilv:dumbass@cluster0.f1kij.mongodb.net/workout-tracker?retryWrites=true&w=majority"
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,7 +19,7 @@ app.use(express.static("public"));
 app.use(logger("dev"));
 
 //connect to mongoose
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect(dbConnection, {
   useNewUrlParser: true,
   useFindAndModify: false
 });
