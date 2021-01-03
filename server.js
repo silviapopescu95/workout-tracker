@@ -1,6 +1,7 @@
 // import express and mongoose
 var express = require("express");
 var mongoose = require("mongoose");
+var bodyParser = require("body-parser");
 
 // create port
 var PORT = 3500;
@@ -12,6 +13,17 @@ var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+
+// connects to mongoose
+mongoose.connect("mongodb://localhost/workout-tracker", {
+  useNewUrlParser: "true",
+});
+mongoose.connection.on("error", err => {
+  console.log("err", err)
+});
+mongoose.connection.on("connected", (err, res) => {
+  console.log("mongoose is connected")
+});
 
 //routes
 app.use(require("./routes/apiRoutes"));
